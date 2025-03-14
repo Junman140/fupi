@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 180 15% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 180 15% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 15% 8%;
+    --primary: 185 100% 13%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 157 79% 84%;
+    --secondary-foreground: 185 100% 13%;
+    --muted: 150 40% 92%;
+    --muted-foreground: 185 100% 13%;
+    --accent: 43 48% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 157 79% 84%;
+    --input: 157 79% 84%;
+    --ring: 157 79% 84%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 185 100% 13%;
+    --foreground: 0 0% 98%;
+    --card: 185 100% 13%;
+    --card-foreground: 0 0% 98%;
+    --popover: 185 100% 13%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 157 79% 84%;
+    --primary-foreground: 185 100% 13%;
+    --secondary: 43 48% 48%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 150 40% 92%;
+    --muted-foreground: 185 100% 13%;
+    --accent: 260 60% 85%;
+    --accent-foreground: 185 100% 13%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 157 79% 84%;
+    --input: 157 79% 84%;
+    --ring: 157 79% 84%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+  p {
+    @apply leading-relaxed;
+  }
+  section {
+    @apply py-12 md:py-20;
+  }
+}
+
+/* Custom styles for the AngelList-inspired design */
+.bg-deep-teal {
+  background-color: #003a40;
+}
+
+.bg-light-mint {
+  background-color: #b9f4d6;
+}
+
+.bg-bronze-gold {
+  background-color: #b68d40;
+}
+
+.bg-light-lavender {
+  background-color: #c5bdf6;
+}
+
+.bg-soft-sage {
+  background-color: #e0f5e9;
+}
+
+.text-deep-teal {
+  color: #003a40;
+}
+
+.text-light-mint {
+  color: #b9f4d6;
+}
+
+.text-bronze-gold {
+  color: #b68d40;
+}
+
+.text-light-lavender {
+  color: #c5bdf6;
+}
+
+/* Sticky header */
+.sticky-header {
+  @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
+}
+
+.sticky-header.scrolled {
+  @apply bg-deep-teal shadow-md;
+}
+
+/* Section alternating backgrounds */
+.section-alt-light {
+  @apply bg-soft-sage text-deep-teal;
+}
+
+.section-alt-dark {
+  @apply bg-deep-teal text-white;
+}
+
+.section-alt-accent {
+  @apply bg-bronze-gold/90 text-white;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:translate-y-[-5px];
+}
+
+/* Typography enhancements */
+.heading-xl {
+  @apply text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight;
+}
+
+.heading-lg {
+  @apply text-4xl md:text-5xl font-bold tracking-tight;
+}
+
+.heading-md {
+  @apply text-3xl md:text-4xl font-bold tracking-tight;
+}
+
+.heading-sm {
+  @apply text-2xl md:text-3xl font-bold tracking-tight;
+}
+
+.subheading {
+  @apply text-xl md:text-2xl font-medium;
+}
+
+.body-lg {
+  @apply text-lg leading-relaxed;
+}
+
+.body-md {
+  @apply text-base leading-relaxed;
+}
+
+.body-sm {
+  @apply text-sm leading-relaxed;
+}
+
+/* CTA buttons */
+.cta-primary {
+  @apply bg-light-lavender text-deep-teal hover:bg-light-lavender/90 font-medium px-6 py-3 rounded-md transition-all;
+}
+
+.cta-secondary {
+  @apply bg-transparent border-2 border-light-mint text-light-mint hover:bg-light-mint/10 font-medium px-6 py-3 rounded-md transition-all;
+}
+
+/* Whitespace and layout */
+.container-tight {
+  @apply max-w-5xl mx-auto px-4;
+}
+
+.container-wide {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+/* Responsive spacing */
+.section-spacing {
+  @apply py-12 md:py-20 lg:py-24;
+}
+
+.section-spacing-sm {
+  @apply py-8 md:py-12 lg:py-16;
+}
+
+/* Testimonial cards */
+.testimonial-card {
+  @apply bg-white rounded-lg shadow-md p-6 border border-light-mint/10;
+}
+
+/* Stats display */
+.stat-display {
+  @apply text-5xl md:text-6xl font-bold;
+}
+
+.stat-label {
+  @apply text-lg font-medium mt-2;
+}
+
+/* Dropdown menu animations */
+.dropdown-animation {
+  @apply transition-all duration-300 transform origin-top;
+}
+
+.dropdown-enter {
+  @apply opacity-0 scale-95;
+}
+
+.dropdown-enter-active {
+  @apply opacity-100 scale-100;
+}
+
+.dropdown-exit {
+  @apply opacity-100 scale-100;
+}
+
+.dropdown-exit-active {
+  @apply opacity-0 scale-95;
+}
+
